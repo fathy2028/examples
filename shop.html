@@ -2,6 +2,133 @@
 <html>
 <head>
   <title>Shop</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    #shop-page {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+      animation: fadeIn 0.6s ease;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+      color: #333;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      transition: all 0.3s ease;
+    }
+
+    select:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0,123,255,0.4);
+      outline: none;
+    }
+
+    .product {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product h2 {
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    #add-to-cart-button, #proceed-to-checkout-button {
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    #add-to-cart-button:hover, #proceed-to-checkout-button:hover {
+      background-color: #0056b3;
+      transform: scale(1.03);
+    }
+
+    #proceed-to-checkout-button {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      #shop-page {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .product h2 {
+        font-size: 18px;
+      }
+
+      #add-to-cart-button, #proceed-to-checkout-button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="shop-page">
@@ -13,10 +140,11 @@
       <option value="books">Books</option>
     </select>
   
-      <div class="product" data-name="Smartphone X">
-        <h2>Smartphone X</h2>
-        <button id="add-to-cart-button" >Add to Cart</button>
+    <div class="product" data-name="Smartphone X">
+      <h2>Smartphone X</h2>
+      <button id="add-to-cart-button">Add to Cart</button>
     </div>
+    
     <button id="proceed-to-checkout-button">Proceed to Checkout</button>
   </div>
 </body>
